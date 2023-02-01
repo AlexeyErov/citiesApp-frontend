@@ -1,0 +1,71 @@
+.info-block {
+  margin-top: 5%;
+  display: flex;
+  justify-content: center;
+}
+
+.city-title-block {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.city-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.city-image-block {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.city-title-change-btn {
+  margin-top: 15px;
+}
+
+.pagination-change-btn {
+  text-align: center;
+}
+
+.pagination-block {
+  display: flex;
+  justify-content: center;
+  margin-bottom: -15px;
+}
+
+.search-bar {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-btn {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+.image-upload-container {
+  display: flex;
+  justify-content: center;
+}
+
+.upload-btn-block {
+  display: block;
+  margin-left: 45%;
+}
+
+.city-title-change-input {
+  margin-right: 15px;
+}
+
+.page-change-error {
+  color: red;
+  text-align: center;
+}
+
+.empty-title {
+  color: red;
+  text-align: center;
+}
+
