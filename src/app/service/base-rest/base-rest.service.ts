@@ -1,7 +1,6 @@
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
-import {environment} from "../../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -10,12 +9,14 @@ export class BaseRestService {
 
   headers: any = {'content-type': 'application/json'}
 
+  restUrl = 'http://localhost:8080';
+
   constructor(private http: HttpClient) {
   }
 
   get<T>(endpoint: string, params?: HttpParams): Observable<T> {
     return this.http.get<T>(
-      environment.common.restUrl + endpoint,
+      this.restUrl + endpoint,
       {params: params}
     );
   }
@@ -23,7 +24,7 @@ export class BaseRestService {
   getBlob(endpoint: string, params?: HttpParams): Observable<any> {
 
     return this.http.get(
-      environment.common.restUrl + endpoint,
+      this.restUrl + endpoint,
       {params: params, responseType: 'blob'}
     );
   }
@@ -32,7 +33,7 @@ export class BaseRestService {
 
 
     return this.http.post<T>(
-      environment.common.restUrl + endpoint,
+      this.restUrl + endpoint,
       body,
       {'headers': this.headers}
     )
@@ -42,7 +43,7 @@ export class BaseRestService {
 
 
     return this.http.put<T>(
-      environment.common.restUrl + endpoint,
+      this.restUrl + endpoint,
       body,
       {'headers': this.headers}
     )
@@ -51,7 +52,7 @@ export class BaseRestService {
   postFile<T>(endpoint: string, body: any): Observable<T> {
 
     return this.http.post<T>(
-      environment.common.restUrl + endpoint,
+      this.restUrl + endpoint,
       body
     )
   }
@@ -63,7 +64,7 @@ export class BaseRestService {
       params: params
     };
     return this.http.delete<T>(
-      environment.common.restUrl + endpoint,
+      this.restUrl + endpoint,
       options
     );
   }
